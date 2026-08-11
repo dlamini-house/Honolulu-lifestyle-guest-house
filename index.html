@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honolulu Lifestyle | Refined Comfort in Burgersfort</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="brand-logo">Honolulu Lifestyle</div>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="spa.html">Spa & Wellness</a>
+      <a href="dining.html">Dining</a>
+      <a href="#attractions">Attractions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#book" class="btn btn-gold">Book Now</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Background Slideshow -->
+  <section class="hero">
+    <div class="hero-slideshow">
+      <div class="slide active" style="background-image: url('images/WhatsApp Image 2026-08-04 at 08.06.57.jpeg');"></div>
+      <div class="slide" style="background-image: url('images/DSC_3393.jpg');"></div>
+      <div class="slide" style="background-image: url('images/DSC_3408.jpg');"></div>
+      <div class="slide" style="background-image: url('images/DSC_3264.jpg');"></div>
+    </div>
+    <div class="hero-content">
+      <span class="subheading">Mashifane Park, Burgersfort</span>
+      <h1>Your Sanctuary of Refined Comfort in Burgersfort.</h1>
+      <p>Bespoke hospitality, serene poolside leisure, and premium wellness.</p>
+    </div>
+  </section>
+
+  <!-- Search / Booking Bar -->
+  <div class="booking-bar-wrapper">
+    <form class="booking-bar">
+      <div class="booking-field">
+        <label>Check In</label>
+        <input type="date" value="2024-10-12">
+      </div>
+      <div class="booking-field">
+        <label>Check Out</label>
+        <input type="date" value="2024-10-15">
+      </div>
+      <div class="booking-field">
+        <label>Guests</label>
+        <select>
+          <option>2 Adults, 0 Children</option>
+          <option>2 Adults, 1 Child</option>
+        </select>
+      </div>
+      <div class="booking-field">
+        <label>Room</label>
+        <select>
+          <option>All Rooms</option>
+          <option>Deluxe Suite</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold">Check Availability</button>
+    </form>
+  </div>
+
+  <!-- Featured Accommodations Section -->
+  <section class="section">
+    <div class="section-header flex-between">
+      <div>
+        <span class="subheading">Top Accommodations</span>
+        <h2>Curated Spaces for Rest.</h2>
+      </div>
+      <a href="rooms.html" class="btn btn-outline">View All Suites &rarr;</a>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="images/Deluxe room.jpeg" alt="Deluxe Room">
+          <span class="card-tag">Featured</span>
+          <span class="card-price-tag">R950/night</span>
+        </div>
+        <div class="card-body">
+          <h3>Deluxe Room</h3>
+          <p>Bespoke luxury with soothing charcoal accents and detailed lighting for ultimate relaxation.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="images/Twin room 2.jpeg" alt="Twin Room">
+          <span class="card-price-tag">R1,500/night</span>
+        </div>
+        <div class="card-body">
+          <h3>Twin Room</h3>
+          <p>Damask tufted headboards and fine linens for shared comfort and ultimate style.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 2rem;">
+      <div class="card card-body">
+        <h4>Standard Room</h4>
+        <p>Essential warmth with high-end touches.</p>
+        <a href="rooms.html" style="color: var(--accent-gold); font-size: 0.85rem;">From R900 &rarr;</a>
+      </div>
+      <div class="card card-body">
+        <h4>Executive Suite</h4>
+        <p>Elevated space for business or leisure.</p>
+        <a href="rooms.html" style="color: var(--accent-gold); font-size: 0.85rem;">From R1,289 &rarr;</a>
+      </div>
+      <div class="card card-body">
+        <h4>Family Room</h4>
+        <p>Generous space designed for groups.</p>
+        <a href="rooms.html" style="color: var(--accent-gold); font-size: 0.85rem;">From R1,450 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle & Wellness Feature -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <img src="images/Poolside images.JPG" alt="Poolside Serenity" style="border-radius: var(--radius-md);">
+      </div>
+      <div>
+        <span class="subheading">Lifestyle & Wellness</span>
+        <h2>Immerse in Tranquility.</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Beyond exceptional rooms, discover a lifestyle crafted for well-being. Unwind by our pristine outdoor pool, relax in shaded pavilions, and indulge in premium beverages tailored to elevate your getaway escape.</p>
+        <ul style="margin-bottom: 2rem;">
+          <li style="margin-bottom: 0.5rem;">✔ Pristine Outdoor Pool & Gazebo</li>
+          <li style="margin-bottom: 0.5rem;">✔ Holistic Wellness Treatments</li>
+          <li style="margin-bottom: 0.5rem;">✔ Curated Premium Beverages</li>
+        </ul>
+        <a href="spa.html" class="btn btn-outline">Explore Lifestyle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attractions Grid -->
+  <section class="section" id="attractions">
+    <div class="section-header" style="text-align: center;">
+      <span class="subheading">Explore Burgersfort</span>
+      <h2>Discover the Surroundings.</h2>
+      <p style="color: var(--text-muted);">Perfectly situated in Mashifane Park, offering convenient access to Limpopo’s top destinations.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-body">
+          <h4>Panorama Route</h4>
+          <p>Iconic scenic route featuring breath-taking viewpoints.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4>Echo Caves</h4>
+          <p>Historic underground limestone cavern tours.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4>Thaba Moshate Casino</h4>
+          <p>Premier entertainment destination featuring gaming.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4>Tubatse Crossing Mall</h4>
+          <p>The region's largest shopping center for retail therapy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-grid">
+      <div>
+        <h3>Honolulu Lifestyle</h3>
+        <p style="color: var(--text-muted); margin-top: 1rem; max-width: 300px;">
+          Located in the Heart of Mashifane Park.<br>
+          3768 Gate St, Mashifane Park, Burgersfort, 1150
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Experience</h4>
+        <ul>
+          <li><a href="rooms.html">The Rooms</a></li>
+          <li><a href="spa.html">The Spa</a></li>
+          <li><a href="dining.html">The Dining</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p style="color: var(--text-muted);">+270 13 000 0000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Honolulu Lifestyle Boutique Hotel. All rights reserved.</p>
+      <p>Privacy Policy | Terms & Conditions</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
