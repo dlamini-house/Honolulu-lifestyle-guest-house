@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dining & Hospitality | Honolulu Boutique Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand-logo">Honolulu</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="spa.html">Spa & Wellness</a>
+      <a href="dining.html" class="active">Dining</a>
+      <a href="index.html#attractions">Attractions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#book" class="btn btn-gold">Book Now</a>
+    </div>
+  </header>
+
+<!-- Replace line 26 in dining.html -->
+<section class="hero" style="background-image: url('images/Hotel Outdoor area 1.jpeg');">
+  <div class="hero-content">
+    <span class="subheading">Dining & Hospitality</span>
+    <h1>Exquisite Flavors, Serene Settings</h1>
+    <p>A symphony of local ingredients and refined preparation, served in sensory spaces designed to celebrate every meal.</p>
+  </div>
+</section>
+
+  <!-- Featured Restaurant Section -->
+  <section class="section">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <span class="subheading">Signature Restaurant</span>
+        <h2>The Terrace</h2>
+        <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">Immerse yourself in our signature alfresco dining experience. The Terrace blends seamless garden views with an organic architectural warmth, creating an atmosphere where time slows down and every meal becomes a cherished memory.</p>
+        <a href="#menu" class="btn btn-dark">Discover the Space</a>
+      </div>
+      <div>
+        <img src="images/Hotel Outdoor area 1.jpeg" alt="The Terrace Seating" style="border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Pour & Sommelier Banner -->
+  <section class="section" style="padding-top: 0;">
+    <div class="dark-banner">
+      <div>
+        <span class="subheading" style="color: var(--accent-gold);">Curated Pour</span>
+        <h3>Beverage Service</h3>
+        <p>Our approach to hospitality is deeply personal. From our premium, hand-selected beverage collection to the intuitive care of our staff, every detail is orchestrated to provide a flawless experience. Allow us to pour perfection into your glass.</p>
+      </div>
+      <div style="text-align: right;">
+        <h4 style="color: #fff; margin-bottom: 0.5rem;">Sommelier Selection</h4>
+        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Explore rare vintages and artisanal spirits from our private cellar.</p>
+        <a href="#" class="btn btn-gold" style="font-size: 0.75rem;">View Cellar List &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Menu Section -->
+  <section class="section" id="menu" style="background-color: var(--bg-secondary);">
+    <div class="section-header flex-between">
+      <div>
+        <span class="subheading">A Taste of Honolulu</span>
+        <h2>Sample Menu</h2>
+      </div>
+      <p style="max-width: 400px; color: var(--text-muted); font-size: 0.9rem;">Highlighting indigenous flavors, organic harvests, and gourmet creative snacks crafted for the discerning palate.</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- Starters / Snacks -->
+      <div>
+        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🥖</span> Gourmet Snacks
+        </h3>
+
+        <div style="margin-bottom: 1.5rem;">
+          <div class="flex-between">
+            <h4>Artisanal Charcuterie Board</h4>
+            <span>24</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Cured local meats, aged cheeses, house-made fig preserves, artisan crisps.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <div class="flex-between">
+            <h4>Pacific Yellowfin Crudo</h4>
+            <span>28</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Citrus ponzu, micro-cilantro, serrano pepper, toasted sesame.</p>
+        </div>
+
+        <div>
+          <div class="flex-between">
+            <h4>Truffle Foraged Mushrooms</h4>
+            <span>19</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Wild seasonal mushrooms, garlic herb butter, grilled sourdough.</p>
+        </div>
+      </div>
+
+      <!-- Mains -->
+      <div>
+        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🍽</span> Signature Mains
+        </h3>
+
+        <div style="margin-bottom: 1.5rem;">
+          <div class="flex-between">
+            <h4>Macadamia Crusted Catch</h4>
+            <span>42</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Fresh local market fish, coconut lemongrass broth, forbidden rice.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <div class="flex-between">
+            <h4>Wagyu Ribeye Ribbons</h4>
+            <span>56</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Charred scallion puree, soy-ginger glaze, crispy lotus root.</p>
+        </div>
+
+        <div>
+          <div class="flex-between">
+            <h4>Heirloom Tomato Tartare</h4>
+            <span>36</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Smoked sea salt, balsamic pearls, whipped ricotta, basil oil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Card Banner -->
+  <section class="section" style="text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 3rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🍽</div>
+      <span class="subheading">Reserve a Table</span>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Secure your place at The Terrace or arrange a private dining experience. Allow us to prepare a table that awaits your arrival.</p>
+      <a href="#" class="btn btn-dark">Find Availability &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Visit Us</h4>
+        <p style="color: var(--text-muted);">3768 Gate St, Burgersfort, Limpopo, South Africa</p>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <p style="color: var(--text-muted);">Social & Contact Links</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p style="color: var(--text-muted);">Privacy Policy | Terms & Conditions</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Honolulu Lifestyle Boutique Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

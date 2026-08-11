@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodation | Honolulu Boutique Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand-logo">Honolulu</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="rooms.html" class="active">Rooms</a>
+      <a href="spa.html">Spa & Wellness</a>
+      <a href="dining.html">Dining</a>
+      <a href="index.html#attractions">Attractions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#book" class="btn btn-gold">Book Now</a>
+    </div>
+  </header>
+<!-- Replace line 26 in rooms.html -->
+<section class="hero" style="background-image: url('images/Rooms hero.JPG');">
+  <div class="hero-content">
+    <span class="subheading">Accommodation</span>
+    <h1>Sanctuaries of Rest</h1>
+    <p>Experience timeless elegance and organic warmth. Every room is designed as a private retreat combining modern presence with quiet luxury.</p>
+  </div>
+</section>
+
+  <!-- Signature Suites Grid -->
+  <section class="section">
+    <div class="section-header flex-between">
+      <div>
+        <span class="subheading">Curated spaces for the discerning traveler</span>
+        <h2>Signature Suites</h2>
+      </div>
+      <div>
+        <button class="btn btn-outline slider-prev">&larr;</button>
+        <button class="btn btn-outline slider-next">&rarr;</button>
+      </div>
+    </div>
+
+    <div class="grid-2 slider-track">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="images/Delux room.JPG" alt="Deluxe Room">
+          <span class="card-price-tag">From R950</span>
+        </div>
+        <div class="card-body">
+          <h3>Deluxe Room</h3>
+          <p>A study in contrast and comfort. Features a plush king bed set against a dramatic charcoal feature wall, softened by organic linens and warm ambient lighting.</p>
+          <div class="card-specs">
+            <span>🛏 King Bed</span>
+            <span>📐 32 sqm</span>
+            <span>📶 Free WiFi</span>
+          </div>
+          <a href="#" class="btn btn-dark" style="width: 100%;">Reserve Room</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="images/Twin room image.JPG" alt="Twin Room">
+          <span class="card-price-tag">From R1,500</span>
+        </div>
+        <div class="card-body">
+          <h3>Twin Room</h3>
+          <p>Spacious and serene, designed for shared luxury. Elegant damask tufted headboards are complemented by subtle wall accents and bespoke linen furnishings.</p>
+          <div class="card-specs">
+            <span>🛏 2 Twin Beds</span>
+            <span>📐 38 sqm</span>
+            <span>🏞 Garden View</span>
+          </div>
+          <a href="#" class="btn btn-outline" style="width: 100%;">Reserve Room</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classic Comforts Grid -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="section-header">
+      <h2>Classic Comforts</h2>
+    </div>
+
+    <div class="grid-2">
+      <!-- The Essential Retreat -->
+      <div class="card card-body" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/DSC_3223.JPG') center/cover no-repeat; color: #fff; justify-content: flex-end; display: flex; flex-direction: column; min-height: 300px;">
+        <span class="card-tag">Standard</span>
+        <h3>The Essential Retreat</h3>
+        <p style="color: #ddd;">Understated elegance with everything you need for rest.</p>
+      </div>
+
+      <!-- Space to Think -->
+      <div class="card card-body" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/DSC_3193.JPG') center/cover no-repeat; color: #fff; justify-content: flex-end; display: flex; flex-direction: column; min-height: 300px;">
+        <span class="card-tag">Executive</span>
+        <h3>Space to Think</h3>
+        <p style="color: #ddd;">Elevated living for the modern professional. Dedicated workspace and expansive views.</p>
+
+      </div>
+    </div>
+
+    <!-- Family Suite Feature Banner -->
+    <div class="card grid-2" style="margin-top: 2rem;">
+      <img src="images/Family suite.JPG" alt="Family Suite" style="height: 100%; min-height: 300px; object-fit: cover;">
+      <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+        <span class="subheading">Suites - Honolulu Lifestyle</span>
+        <h3>The Family Suite</h3>
+        <p>Generous proportions designed for togetherness. Features interconnecting spaces, dual bathrooms, and direct access to our organic gardens.</p>
+        <div class="card-specs">
+          <span>👥 Sleeps 4</span>
+          <span>🛋 Lounge Area</span>
+        </div>
+        <div class="flex-between">
+          <strong>R1,450/nt</strong>
+          <a href="#" class="btn btn-dark">Reserve</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Comforts Amenities -->
+  <section class="section" style="text-align: center;">
+    <span class="subheading">The Experience</span>
+    <h2 style="margin-bottom: 3rem;">Curated Comforts</h2>
+
+    <div class="grid-3">
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 1rem;">📶</div>
+        <h4>High-Speed Connectivity</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Seamless complimentary Wi-Fi across all suites and public spaces.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🌿</div>
+        <h4>Botanical Serenity</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Enjoy room balconies or terraces offering environmental views of our gardens.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🏊</div>
+        <h4>Exclusive Pool Access</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Direct access to our temperature-controlled infinity pool and loungers.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 Honolulu Lifestyle Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

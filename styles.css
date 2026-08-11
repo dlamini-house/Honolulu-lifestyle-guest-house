@@ -1,0 +1,650 @@
+/* ==========================================================================
+   HONOLULU BOUTIQUE HOTEL - UNIFIED STYLESHEET
+   ========================================================================== */
+
+/* --- CSS Variables / Design Tokens --- */
+:root {
+  --bg-primary: #F7F5F0;
+  --bg-secondary: #EFECE6;
+  --bg-dark: #1F2120;
+  --bg-card: #FFFFFF;
+  --text-dark: #1A1A1A;
+  --text-muted: #666666;
+  --text-light: #FFFFFF;
+  --accent-gold: #C5A059;
+  --accent-gold-hover: #b38e47;
+  --accent-dark: #1F2120;
+  --border-color: #E2DDD5;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* --- Reset & Base Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
+  display: block;
+  font-weight: 600;
+}
+
+/* --- Buttons & UI Components --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: #fff;
+}
+.btn-gold:hover {
+  background-color: var(--accent-gold-hover);
+}
+
+.btn-dark {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+.btn-dark:hover {
+  background-color: #000;
+}
+
+.btn-outline {
+  border-color: var(--text-dark);
+  background: transparent;
+  color: var(--text-dark);
+}
+.btn-outline:hover {
+  background: var(--text-dark);
+  color: #fff;
+}
+
+.btn-icon-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Global Header & Nav (Frozen Header) --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.25rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(247, 245, 240, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+}
+
+.brand-logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.main-nav a {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.main-nav a.active::after,
+.main-nav a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-gold);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --- Hero Section & Slideshow --- */
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slideshow .slide.active {
+  opacity: 1;
+}
+
+/* Reduced overlay gradient intensity by 50% */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(247,245,240,0.425) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding-top: 4rem; /* Spacer to prevent dynamic overlay collision with fixed header */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Search / Booking Bar --- */
+.booking-bar-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: -3rem;
+  padding: 0 4rem;
+}
+
+.booking-bar {
+  background: var(--bg-card);
+  padding: 1.25rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+  padding-right: 1rem;
+}
+
+.booking-field:nth-child(4) {
+  border-right: none;
+}
+
+.booking-field label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.booking-field select, 
+.booking-field input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  color: var(--text-dark);
+}
+
+/* --- Layout Sections --- */
+.section {
+  padding: 6rem 4rem;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* --- Grid Utilities --- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.card-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-sm);
+}
+
+.card-price-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-card);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-specs {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.75rem;
+}
+
+/* --- Dark Featured Block --- */
+.dark-banner {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.dark-banner h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.dark-banner p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* --- Footers --- */
+.site-footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  padding: 4rem 4rem 2rem;
+  font-size: 0.85rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: var(--text-muted);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   ENHANCED RESPONSIVE MEDIA QUERIES (Desktop, Tablet, Mobile)
+   ========================================================================== */
+
+/* --- Tablet & Medium Screens (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 1.25rem 2rem;
+  }
+
+  .main-nav {
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .booking-bar-wrapper {
+    padding: 0 2rem;
+  }
+
+  .booking-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .booking-field:nth-child(2) {
+    border-right: none;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer {
+    padding: 3rem 2rem 2rem;
+  }
+}
+
+/* --- Mobile & Small Screens (max-width: 768px) --- */
+@media (max-width: 768px) {
+  /* Navigation & Header */
+  .site-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .main-nav {
+    display: none; /* Hide standard nav list on mobile */
+  }
+
+  .header-actions .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 65vh;
+    min-height: 420px;
+    padding: 0 1rem;
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Booking Bar */
+  .booking-bar-wrapper {
+    margin-top: -2rem;
+    padding: 0 1.25rem;
+  }
+
+  .booking-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .booking-field {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .booking-field:nth-child(4) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Section Layouts & Grids */
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .grid-2, 
+  .grid-3, 
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem;
+  }
+
+  .flex-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Banners & Inline Layout Cards */
+  .dark-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+
+  .dark-banner > div:last-child {
+    text-align: left !important;
+  }
+
+  .card.grid-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card.grid-2 img {
+    height: 220px !important;
+    min-height: auto !important;
+    width: 100%;
+  }
+
+  /* Menu & Spa Treatments */
+  .section#menu .flex-between,
+  .section .flex-between {
+    align-items: baseline;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 3rem 1.25rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* --- Extra Small Mobile Screens (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-specs {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+}
