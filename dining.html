@@ -1,174 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dining & Hospitality | Honolulu Boutique Hotel</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'serif'],
+            cormorant: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="bg-[#FAF8F5] text-[#2C2C2C] antialiased font-sans">
 
-  <header class="site-header">
-    <div class="brand-logo">Honolulu</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms</a>
-      <a href="spa.html">Spa & Wellness</a>
-      <a href="dining.html" class="active">Dining</a>
-      <a href="index.html#attractions">Attractions</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <a href="#book" class="btn btn-gold">Book Now</a>
+  <!-- Floating WhatsApp Support - NOW VISIBLE with green background -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
+    <a href="https://wa.me/27761280530?text=Hello,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Honolulu%20Lifestyle%20Boutique%20Hotel."
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-float flex items-center justify-center w-14 h-14 text-white rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95 bg-[#25D366]"
+       title="WhatsApp Support">
+      <!-- WhatsApp SVG icon - white, properly sized -->
+      <svg class="w-7 h-7 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Header (same as before) -->
+  <header class="fixed top-0 left-0 right-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex flex-col items-start select-none">
+        <span class="font-playfair text-xl md:text-2xl font-bold tracking-[0.18em] text-[#2C2C2C]">HONOLULU</span>
+        <span class="font-cormorant text-[10px] tracking-[0.28em] uppercase text-[#C6A76C] font-semibold -mt-1">Lifestyle Hotel & Spa</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center space-x-8 font-montserrat text-[11px] font-medium tracking-widest uppercase text-gray-500">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="rooms.html" class="nav-link">Rooms</a>
+        <a href="spa.html" class="nav-link">Spa</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="#location" class="nav-link">Location</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button onclick="triggerBooking()" class="hidden sm:inline-block bg-[#C6A76C] hover:bg-[#8B7C6E] text-white font-montserrat text-[10px] tracking-widest uppercase px-5 py-3 rounded-full transition-all duration-300 shadow-sm">
+          Reserve Stay
+        </button>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-[#C6A76C] transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-<!-- Replace line 26 in dining.html -->
-<section class="hero" style="background-image: url('images/Hotel Outdoor area 1.jpeg');">
-  <div class="hero-content">
-    <span class="subheading">Dining & Hospitality</span>
-    <h1>Exquisite Flavors, Serene Settings</h1>
-    <p>A symphony of local ingredients and refined preparation, served in sensory spaces designed to celebrate every meal.</p>
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col p-8">
+    <button id="mobile-menu-close" class="self-end p-2 text-gray-400 hover:text-[#C6A76C] mb-8">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <nav class="flex flex-col space-y-6 font-montserrat text-xs tracking-widest uppercase text-gray-600 mb-8">
+      <a href="index.html" class="mobile-nav-link hover:text-[#C6A76C]">Home</a>
+      <a href="rooms.html" class="mobile-nav-link hover:text-[#C6A76C]">Rooms</a>
+      <a href="spa.html" class="mobile-nav-link hover:text-[#C6A76C]">Spa</a>
+      <a href="dining.html" class="mobile-nav-link hover:text-[#C6A76C]">Dining</a>
+      <a href="#location" class="mobile-nav-link hover:text-[#C6A76C]">Location</a>
+      <a href="#contact" class="mobile-nav-link hover:text-[#C6A76C]">Contact</a>
+    </nav>
+    <button onclick="triggerBooking()" class="w-full bg-[#C6A76C] text-white py-3.5 rounded-full font-montserrat text-[10px] tracking-widest uppercase">
+      Reserve Now
+    </button>
   </div>
-</section>
+  <!-- Hero -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden" style="background-image: url('./Assets/images/Hotel Outdoor area 1.jpeg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 text-center text-white px-6 pt-20">
+      <span class="block text-xs font-montserrat tracking-[0.4em] text-[#C6A76C] uppercase mb-4">Dining & Hospitality</span>
+      <h1 class="font-playfair text-4xl md:text-6xl font-bold mb-4">Exquisite Flavors, Serene Settings</h1>
+      <p class="font-cormorant text-xl max-w-2xl mx-auto text-gray-200">A symphony of local ingredients and refined preparation, served in sensory spaces designed to celebrate every meal.</p>
+    </div>
+  </section>
 
-  <!-- Featured Restaurant Section -->
-  <section class="section">
-    <div class="grid-2" style="align-items: center;">
+  <!-- The Terrace -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <span class="subheading">Signature Restaurant</span>
-        <h2>The Terrace</h2>
-        <p style="color: var(--text-muted); margin: 1rem 0 1.5rem;">Immerse yourself in our signature alfresco dining experience. The Terrace blends seamless garden views with an organic architectural warmth, creating an atmosphere where time slows down and every meal becomes a cherished memory.</p>
-        <a href="#menu" class="btn btn-dark">Discover the Space</a>
+        <span class="block text-xs font-montserrat tracking-[0.3em] text-[#C6A76C] uppercase mb-3">Signature Restaurant</span>
+        <h2 class="font-playfair text-3xl md:text-5xl text-[#2C2C2C] font-semibold">The Terrace</h2>
+        <p class="text-gray-600 text-sm mt-4">Immerse yourself in our signature alfresco dining experience. The Terrace blends seamless garden views with an organic architectural warmth, creating an atmosphere where time slows down and every meal becomes a cherished memory.</p>
+        <button class="mt-8 bg-[#2C2C2C] hover:bg-[#8B7C6E] text-white px-6 py-3 rounded-full font-montserrat text-xs tracking-widest uppercase transition-all">Discover the Space</button>
       </div>
       <div>
-        <img src="images/Hotel Outdoor area 1.jpeg" alt="The Terrace Seating" style="border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+        <img src="./Assets/images/Dinning image 2.JPG" alt="The Terrace" class="rounded-2xl shadow-lg" />
       </div>
     </div>
   </section>
 
-  <!-- Curated Pour & Sommelier Banner -->
-  <section class="section" style="padding-top: 0;">
-    <div class="dark-banner">
+  <!-- Curated Pour Banner -->
+  <section class="py-16 bg-[#1F1F1F] text-white">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
-        <span class="subheading" style="color: var(--accent-gold);">Curated Pour</span>
-        <h3>Beverage Service</h3>
-        <p>Our approach to hospitality is deeply personal. From our premium, hand-selected beverage collection to the intuitive care of our staff, every detail is orchestrated to provide a flawless experience. Allow us to pour perfection into your glass.</p>
+        <span class="block text-xs font-montserrat tracking-[0.3em] text-[#C6A76C] uppercase mb-3">Curated Pour</span>
+        <h3 class="font-playfair text-3xl">Beverage Service</h3>
+        <p class="text-gray-300 text-sm mt-2">Our approach to hospitality is deeply personal. From our premium, hand-selected beverage collection to the intuitive care of our staff, every detail is orchestrated to provide a flawless experience. Allow us to pour perfection into your glass.</p>
       </div>
-      <div style="text-align: right;">
-        <h4 style="color: #fff; margin-bottom: 0.5rem;">Sommelier Selection</h4>
-        <p style="font-size: 0.85rem; margin-bottom: 1rem;">Explore rare vintages and artisanal spirits from our private cellar.</p>
-        <a href="#" class="btn btn-gold" style="font-size: 0.75rem;">View Cellar List &rarr;</a>
+      <div class="text-left md:text-right">
+        <h4 class="font-playfair text-2xl text-white">Sommelier Selection</h4>
+        <p class="text-gray-400 text-sm mt-1">Explore rare vintages and artisanal spirits from our private cellar.</p>
+        <button class="mt-4 bg-[#C6A76C] hover:bg-[#8B7C6E] text-white px-6 py-3 rounded-full font-montserrat text-xs tracking-widest uppercase transition-all">View Cellar List →</button>
       </div>
     </div>
   </section>
 
-  <!-- Sample Menu Section -->
-  <section class="section" id="menu" style="background-color: var(--bg-secondary);">
-    <div class="section-header flex-between">
-      <div>
-        <span class="subheading">A Taste of Honolulu</span>
-        <h2>Sample Menu</h2>
+  <!-- Sample Menu -->
+  <section class="py-24 bg-[#FAF8F5]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="block text-xs font-montserrat tracking-[0.3em] text-[#C6A76C] uppercase mb-3">A Taste of Honolulu</span>
+        <h2 class="font-playfair text-3xl md:text-4xl text-[#2C2C2C] font-semibold">Sample Menu</h2>
+        <p class="text-gray-500 mt-2">Highlighting indigenous flavors, organic harvests, and gourmet creative snacks crafted for the discerning palate.</p>
       </div>
-      <p style="max-width: 400px; color: var(--text-muted); font-size: 0.9rem;">Highlighting indigenous flavors, organic harvests, and gourmet creative snacks crafted for the discerning palate.</p>
-    </div>
-
-    <div class="grid-2">
-      <!-- Starters / Snacks -->
-      <div>
-        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span>🥖</span> Gourmet Snacks
-        </h3>
-
-        <div style="margin-bottom: 1.5rem;">
-          <div class="flex-between">
-            <h4>Artisanal Charcuterie Board</h4>
-            <span>24</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Cured local meats, aged cheeses, house-made fig preserves, artisan crisps.</p>
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <div class="flex-between">
-            <h4>Pacific Yellowfin Crudo</h4>
-            <span>28</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Citrus ponzu, micro-cilantro, serrano pepper, toasted sesame.</p>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Starters -->
         <div>
-          <div class="flex-between">
-            <h4>Truffle Foraged Mushrooms</h4>
-            <span>19</span>
+          <h3 class="font-playfair text-2xl border-b border-gray-200 pb-3 mb-6">🥖 Gourmet Snacks</h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between font-semibold"><span>Artisanal Charcuterie Board</span><span>R 24</span></div>
+              <p class="text-xs text-gray-500">Cured local meats, aged cheeses, house-made fig preserves, artisan crisps.</p>
+            </div>
+            <div>
+              <div class="flex justify-between font-semibold"><span>Pacific Yellowfin Crudo</span><span>R 28</span></div>
+              <p class="text-xs text-gray-500">Citrus ponzu, micro-cilantro, serrano pepper, toasted sesame.</p>
+            </div>
+            <div>
+              <div class="flex justify-between font-semibold"><span>Truffle Foraged Mushrooms</span><span>R 19</span></div>
+              <p class="text-xs text-gray-500">Wild seasonal mushrooms, garlic herb butter, grilled sourdough.</p>
+            </div>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Wild seasonal mushrooms, garlic herb butter, grilled sourdough.</p>
         </div>
-      </div>
-
-      <!-- Mains -->
-      <div>
-        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span>🍽</span> Signature Mains
-        </h3>
-
-        <div style="margin-bottom: 1.5rem;">
-          <div class="flex-between">
-            <h4>Macadamia Crusted Catch</h4>
-            <span>42</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Fresh local market fish, coconut lemongrass broth, forbidden rice.</p>
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <div class="flex-between">
-            <h4>Wagyu Ribeye Ribbons</h4>
-            <span>56</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Charred scallion puree, soy-ginger glaze, crispy lotus root.</p>
-        </div>
-
+        <!-- Mains -->
         <div>
-          <div class="flex-between">
-            <h4>Heirloom Tomato Tartare</h4>
-            <span>36</span>
+          <h3 class="font-playfair text-2xl border-b border-gray-200 pb-3 mb-6">🍽 Signature Mains</h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between font-semibold"><span>Macadamia Crusted Catch</span><span>R 42</span></div>
+              <p class="text-xs text-gray-500">Fresh local market fish, coconut lemongrass broth, forbidden rice.</p>
+            </div>
+            <div>
+              <div class="flex justify-between font-semibold"><span>Wagyu Ribeye Ribbons</span><span>R 56</span></div>
+              <p class="text-xs text-gray-500">Charred scallion puree, soy-ginger glaze, crispy lotus root.</p>
+            </div>
+            <div>
+              <div class="flex justify-between font-semibold"><span>Heirloom Tomato Tartare</span><span>R 36</span></div>
+              <p class="text-xs text-gray-500">Smoked sea salt, balsamic pearls, whipped ricotta, basil oil.</p>
+            </div>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Smoked sea salt, balsamic pearls, whipped ricotta, basil oil.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Reservation Card Banner -->
-  <section class="section" style="text-align: center;">
-    <div style="max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 3rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
-      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🍽</div>
-      <span class="subheading">Reserve a Table</span>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Secure your place at The Terrace or arrange a private dining experience. Allow us to prepare a table that awaits your arrival.</p>
-      <a href="#" class="btn btn-dark">Find Availability &rarr;</a>
+  <!-- Reservation Card -->
+  <section class="py-24 bg-white">
+    <div class="max-w-2xl mx-auto px-6 text-center bg-[#FAF8F5] p-12 rounded-2xl shadow-sm border border-gray-100">
+      <div class="text-5xl mb-4">🍽</div>
+      <span class="block text-xs font-montserrat tracking-[0.3em] text-[#C6A76C] uppercase mb-3">Reserve a Table</span>
+      <p class="text-gray-500 mb-6">Secure your place at The Terrace or arrange a private dining experience. Allow us to prepare a table that awaits your arrival.</p>
+      <button onclick="triggerBooking()" class="bg-[#2C2C2C] hover:bg-[#8B7C6E] text-white px-8 py-4 rounded-full font-montserrat text-xs tracking-widest uppercase transition-all">Find Availability →</button>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Visit Us</h4>
-        <p style="color: var(--text-muted);">3768 Gate St, Burgersfort, Limpopo, South Africa</p>
+  <!-- Footer (identical) -->
+  <footer class="bg-[#1F1F1F] text-[#FAF8F5] pt-20 pb-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
+      <div class="space-y-6">
+        <div class="flex flex-col">
+          <span class="font-playfair text-2xl font-bold tracking-[0.15em] text-white">HONOLULU</span>
+          <span class="font-cormorant text-xs tracking-[0.3em] uppercase text-[#C6A76C] font-semibold -mt-1">Lifestyle Hotel & Spa</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed max-w-xs">Exceptional, high-end South African boutique hotel and guest lodge. Nestled in Burgersfort, Limpopo.</p>
       </div>
       <div>
-        <h4>Connect</h4>
-        <p style="color: var(--text-muted);">Social & Contact Links</p>
+        <h4 class="font-montserrat text-xs font-semibold uppercase tracking-widest text-[#C6A76C] mb-4">Sitemap</h4>
+        <ul class="text-xs text-gray-400 space-y-2.5">
+          <li><a href="index.html" class="hover:text-[#C6A76C]">Home Page</a></li>
+          <li><a href="rooms.html" class="hover:text-[#C6A76C]">Rooms & Suites</a></li>
+          <li><a href="spa.html" class="hover:text-[#C6A76C]">Wellness Spa</a></li>
+          <li><a href="dining.html" class="hover:text-[#C6A76C]">Dining</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Legal</h4>
-        <p style="color: var(--text-muted);">Privacy Policy | Terms & Conditions</p>
+        <h4 class="font-montserrat text-xs font-semibold uppercase tracking-widest text-[#C6A76C] mb-4">Limpopo Guide</h4>
+        <ul class="text-xs text-gray-400 space-y-2.5">
+          <li><a href="index.html#location" class="hover:text-[#C6A76C]">Blyde River Canyon</a></li>
+          <li><a href="index.html#location" class="hover:text-[#C6A76C]">Three Rondavels</a></li>
+          <li><a href="index.html#location" class="hover:text-[#C6A76C]">Echo Caves</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-montserrat text-xs font-semibold uppercase tracking-widest text-[#C6A76C] mb-4">Enquiries</h4>
+        <ul class="text-xs text-gray-400 space-y-2.5">
+          <li>374 E Gate Street, Mashifane Park, Burgersfort, 1150</li>
+          <li>076 128 0530</li>
+          <li>Lamulile@gmail.com</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Honolulu Lifestyle Boutique Hotel. All rights reserved.</p>
+    <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] text-gray-500 uppercase font-montserrat">
+      <div>&copy; 2026 Honolulu Lifestyle Boutique Hotel & Spa. All rights reserved.</div>
+      <div class="flex space-x-6">
+        <a href="index.html#home">Privacy Policy</a><span>|</span><a href="index.html#home">Terms of Stay</a>
+      </div>
     </div>
   </footer>
 
+  <!-- Modals & Script -->
   <script src="script.js"></script>
 </body>
 </html>
