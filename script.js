@@ -1,6 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Hero Slideshow Controller
+  // Hero Slideshow Controller – speed set to 2500ms (faster)
   const slides = document.querySelectorAll('.hero-slideshow .slide');
   if (slides.length > 0) {
     let currentSlide = 0;
@@ -8,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
-    }, 4000); // Transitions every 4 seconds
+    }, 2500);
   }
-});
-  // ========== BOOKING BAR (from redesign) ==========
+
+  // Booking Bar
   const bookingBar = document.querySelector('.booking-bar');
   if (bookingBar) {
     bookingBar.addEventListener('submit', (e) => {
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========== EXISTING FUNCTIONS FROM FIRST SITE ==========
+  // Init all features
   initScrollHighlight();
   initMobileMenu();
   initBookingModal();
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href === `#${currentActive}` || href === `index.html#${currentActive}` || href === `index.html` && currentActive === 'home') {
+        if (href === `#${currentActive}` || href === `index.html#${currentActive}` || (href === 'index.html' && currentActive === 'home')) {
           link.classList.add('active');
         }
       });
@@ -111,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // Expose globally
     window.triggerBooking = openModal;
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -134,12 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== GALLERY LIGHTBOX ==========
   function initGalleryLightbox() {
     const GALLERY_ITEMS = [
-      { id: 'gal1', title: 'Aerial Drone Overview', category: 'outdoor', imageUrl: './Assets/images/Hotel Frontside.jpeg', description: 'Aerial perspective of our elegant red-tiled villa.' },
-      { id: 'gal2', title: 'Executive Charcoal Room', category: 'rooms', imageUrl: './Assets/images/bedroom_charcoal_1786019277132.jpg', description: 'The exquisite contrast of the charcoal accent feature wall.' },
-      { id: 'gal3', title: 'Deluxe Twin Room Beds', category: 'rooms', imageUrl: './Assets/images/bedroom_grey_1786019310867.jpg', description: 'Sophisticated twin setup featuring high button-tufted grey headboards.' },
-      { id: 'gal4', title: 'Signature Chardonnay Service', category: 'details', imageUrl: './Assets/images/wine_bucket_1786019349266.jpg', description: 'Babylonstoren Chardonnay in a chilled acrylic ice bucket.' },
-      { id: 'gal5', title: 'Patio Veranda Seating', category: 'dining', imageUrl: './Assets/images/patio_dining_1786019388827.jpg', description: 'Our covered glass-top table dining area looking out to the swimming pool.' },
-      { id: 'gal6', title: 'Checkerboard Poolside Paving', category: 'pool', imageUrl: './Assets/images/poolside_loungers_1786019428811.jpg', description: 'Premium grey lounge chairs set on checkerboard paving.' },
+      { id: 'gal1', title: 'Aerial Drone Overview', category: 'outdoor', imageUrl: 'Assets/images/Hotel Frontside.jpeg', description: 'Aerial perspective of our elegant red-tiled villa.' },
+      { id: 'gal2', title: 'Executive Charcoal Room', category: 'rooms', imageUrl: 'Assets/images/bedroom_charcoal_1786019277132.jpg', description: 'The exquisite contrast of the charcoal accent feature wall.' },
+      { id: 'gal3', title: 'Deluxe Twin Room Beds', category: 'rooms', imageUrl: 'Assets/images/bedroom_grey_1786019310867.jpg', description: 'Sophisticated twin setup featuring high button-tufted grey headboards.' },
+      { id: 'gal4', title: 'Signature Chardonnay Service', category: 'details', imageUrl: 'Assets/images/wine_bucket_1786019349266.jpg', description: 'Babylonstoren Chardonnay in a chilled acrylic ice bucket.' },
+      { id: 'gal5', title: 'Patio Veranda Seating', category: 'dining', imageUrl: 'Assets/images/patio_dining_1786019388827.jpg', description: 'Our covered glass-top table dining area looking out to the swimming pool.' },
+      { id: 'gal6', title: 'Checkerboard Poolside Paving', category: 'pool', imageUrl: 'Assets/images/poolside_loungers_1786019428811.jpg', description: 'Premium grey lounge chairs set on checkerboard paving.' },
       { id: 'gal7', title: 'Blyde River Canyon Vistas', category: 'lifestyle', imageUrl: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&auto=format&fit=crop&q=80', description: 'Spectacular green canyon scenery of the nearby Blyde River Canyon.' },
       { id: 'gal8', title: 'Therapeutic Hot Stones', category: 'lifestyle', imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=80', description: 'Our relaxing wellness spa treatment using basalt rocks.' },
     ];
