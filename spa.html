@@ -23,7 +23,7 @@
 </head>
 <body class="bg-[#FAF8F5] text-[#2C2C2C] antialiased font-sans">
 
-  <!-- Floating WhatsApp (same) -->
+  <!-- Floating WhatsApp -->
   <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
     <a href="https://wa.me/27661360353?text=Hello,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Honolulu%20Lifestyle%20Guesthouse."
        target="_blank" rel="noopener noreferrer"
@@ -35,7 +35,7 @@
     </a>
   </div>
 
-  <!-- HEADER (same) -->
+  <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="index.html" class="flex flex-col items-start select-none">
@@ -51,9 +51,12 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="flex items-center space-x-4">
-        <button onclick="triggerBooking()" class="hidden sm:inline-block bg-[#C6A76C] hover:bg-[#8B7C6E] text-white font-montserrat text-[10px] tracking-widest uppercase px-5 py-3 rounded-full transition-all duration-300 shadow-sm">
+        <a href="https://www.booking.com/hotel/za/honolulu-lifestyle-guest-lodge.html?chal_t=1787037359055&force_referer=https%3A%2F%2Fwww.google.com%2F"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hidden sm:inline-block bg-[#C6A76C] hover:bg-[#8B7C6E] text-white font-montserrat text-[10px] tracking-widest uppercase px-5 py-3 rounded-full transition-all duration-300 shadow-sm">
           Reserve Stay
-        </button>
+        </a>
         <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-[#C6A76C] transition-colors">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
@@ -61,7 +64,7 @@
     </div>
   </header>
 
-  <!-- MOBILE DRAWER (same) -->
+  <!-- MOBILE DRAWER -->
   <div id="mobile-menu-backdrop" class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col p-8">
     <button id="mobile-menu-close" class="self-end p-2 text-gray-400 hover:text-[#C6A76C] mb-8">
@@ -75,9 +78,12 @@
       <a href="location.html" class="mobile-nav-link hover:text-[#C6A76C]">Location</a>
       <a href="contact.html" class="mobile-nav-link hover:text-[#C6A76C]">Contact</a>
     </nav>
-    <button onclick="triggerBooking()" class="w-full bg-[#C6A76C] text-white py-3.5 rounded-full font-montserrat text-[10px] tracking-widest uppercase">
+    <a href="https://www.booking.com/hotel/za/honolulu-lifestyle-guest-lodge.html?chal_t=1787037359055&force_referer=https%3A%2F%2Fwww.google.com%2F"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="w-full bg-[#C6A76C] text-white py-3.5 rounded-full font-montserrat text-[10px] tracking-widest uppercase text-center block">
       Reserve Now
-    </button>
+    </a>
   </div>
 
   <!-- HERO -->
@@ -101,7 +107,7 @@
     </div>
   </section>
 
-  <!-- TREATMENT MENU -->
+  <!-- ===== TREATMENT MENU – UPDATED (FACIALS & RITUALS REMOVED) ===== -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -109,39 +115,22 @@
         <h2 class="font-playfair text-3xl md:text-4xl text-[#2C2C2C] font-semibold">Treatment Menu</h2>
         <p class="text-gray-500 mt-2">A refined selection of therapies designed to ground the body and elevate the mind.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="font-playfair text-2xl border-b border-gray-200 pb-3 mb-6">Signature Massages</h3>
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between font-semibold"><span>Botanical Deep Tissue</span><span>60 Min / R650</span></div>
-              <p class="text-xs text-gray-500">Intense muscle relief using warm arnica and eucalyptus oils.</p>
-            </div>
-            <div>
-              <div class="flex justify-between font-semibold"><span>The Honolulu Nectar Therapy</span><span>90 Min / R900</span></div>
-              <p class="text-xs text-gray-500">Gentle, rhythmic body work combined with bespoke herbal compresses.</p>
-            </div>
-            <div>
-              <div class="flex justify-between font-semibold"><span>Aromatherapy Swedish</span><span>60 Min / R550</span></div>
-              <p class="text-xs text-gray-500">Classic massage tailored with customized botanical blends.</p>
-            </div>
+
+      <!-- Single column – centred, full-width on desktop, responsive on mobile -->
+      <div class="max-w-3xl mx-auto">
+        <h3 class="font-playfair text-2xl border-b border-gray-200 pb-3 mb-6 text-center">Signature Massages</h3>
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between font-semibold"><span>Botanical Deep Tissue</span><span>60 Min / R650</span></div>
+            <p class="text-xs text-gray-500">Intense muscle relief using warm arnica and eucalyptus oils.</p>
           </div>
-        </div>
-        <div>
-          <h3 class="font-playfair text-2xl border-b border-gray-200 pb-3 mb-6">Facials & Rituals</h3>
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between font-semibold"><span>Radiance Renewal Facial</span><span>60 Min / R600</span></div>
-              <p class="text-xs text-gray-500">A brightening treatment combining fruit enzymes and vitamin C.</p>
-            </div>
-            <div>
-              <div class="flex justify-between font-semibold"><span>Organic Hydration Hydrat</span><span>75 Min / R775</span></div>
-              <p class="text-xs text-gray-500">Deeply nourishing facial focusing on restoring moisture barriers.</p>
-            </div>
-            <div>
-              <div class="flex justify-between font-semibold"><span>The Day Retreat Package</span><span>180 Min / R1,850</span></div>
-              <p class="text-xs text-gray-500">Full body scrub, 60-min massage, custom facial, and poolside light lunch.</p>
-            </div>
+          <div>
+            <div class="flex justify-between font-semibold"><span>The Honolulu Nectar Therapy</span><span>90 Min / R900</span></div>
+            <p class="text-xs text-gray-500">Gentle, rhythmic body work combined with bespoke herbal compresses.</p>
+          </div>
+          <div>
+            <div class="flex justify-between font-semibold"><span>Aromatherapy Swedish</span><span>60 Min / R550</span></div>
+            <p class="text-xs text-gray-500">Classic massage tailored with customized botanical blends.</p>
           </div>
         </div>
       </div>
@@ -153,11 +142,16 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-playfair text-3xl md:text-4xl text-[#2C2C2C] font-semibold">Ready for Restoration?</h2>
       <p class="text-gray-700 mt-4 mb-8">Our wellness concierge is available to curate a bespoke experience tailored to your specific needs.</p>
-      <button onclick="triggerBooking()" class="bg-[#2C2C2C] hover:bg-[#8B7C6E] text-white px-8 py-4 rounded-full font-montserrat text-xs tracking-widest uppercase transition-all">Inquire About a Wellness Package</button>
+      <a href="https://www.booking.com/hotel/za/honolulu-lifestyle-guest-lodge.html?chal_t=1787037359055&force_referer=https%3A%2F%2Fwww.google.com%2F"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="bg-[#2C2C2C] hover:bg-[#8B7C6E] text-white px-8 py-4 rounded-full font-montserrat text-xs tracking-widest uppercase transition-all inline-block">
+        Inquire About a Wellness Package
+      </a>
     </div>
   </section>
 
-  <!-- FOOTER (same) -->
+  <!-- FOOTER -->
   <footer class="bg-[#1F1F1F] text-[#FAF8F5] pt-20 pb-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
       <div class="space-y-6">
@@ -202,8 +196,7 @@
     </div>
   </footer>
 
-  <!-- ===== MODALS (identical to rooms.html) ===== -->
-  <!-- Lightbox -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="fixed inset-0 z-50 bg-[#2C2C2C]/95 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-white/75 hover:text-white transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -226,63 +219,6 @@
     </button>
   </div>
 
-  <!-- Booking Modal -->
-  <div id="booking-modal" class="fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl border border-gray-100 relative animate-scale-in" onclick="event.stopPropagation()">
-      <button id="booking-modal-close" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-[#C6A76C] transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-
-      <div id="booking-form-screen" class="p-8">
-        <h3 class="font-playfair text-2xl font-bold mb-1 text-[#2C2C2C]">Direct Booking Desk</h3>
-        <p class="font-cormorant text-gray-500 text-base mb-6">Enjoy immediate confirmations, premium amenities, and our dedicated host guarantee.</p>
-        <form id="booking-form" class="space-y-4">
-          <div>
-            <label class="block text-[10px] font-montserrat uppercase text-[#8B7C6E] mb-1">Selected Sanctuary</label>
-            <select id="booking-room-select" required class="w-full bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#C6A76C]">
-              <option value="standard">Standard Room — R800/night</option>
-              <option value="deluxe">Deluxe Room — R950/night</option>
-              <option value="executive">Executive Room — R1289/night</option>
-              <option value="twin">Twin Room — R1300/night</option>
-              <option value="family">Family Room — R1450/night</option>
-            </select>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-[10px] font-montserrat uppercase text-[#8B7C6E] mb-1">Check-In Date</label>
-              <input type="date" required class="w-full bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none" />
-            </div>
-            <div>
-              <label class="block text-[10px] font-montserrat uppercase text-[#8B7C6E] mb-1">Check-Out Date</label>
-              <input type="date" required class="w-full bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none" />
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-[10px] font-montserrat uppercase text-[#8B7C6E] mb-1">Your Full Name</label>
-              <input id="booking-name" type="text" required placeholder="John Doe" class="w-full bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none" />
-            </div>
-            <div>
-              <label class="block text-[10px] font-montserrat uppercase text-[#8B7C6E] mb-1">Phone Number</label>
-              <input id="booking-phone" type="tel" required placeholder="e.g. +27 66 136 0353" class="w-full bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-sm" />
-            </div>
-          </div>
-          <button type="submit" class="w-full bg-[#C6A76C] hover:bg-[#8B7C6E] text-white py-4 rounded-xl font-montserrat text-xs tracking-widest uppercase transition-all shadow-md">Submit Reservation Inquiry</button>
-        </form>
-      </div>
-
-      <div id="booking-success-screen" class="hidden p-8 text-center space-y-6 py-12">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-[#6D8065]/10 text-[#6D8065] rounded-full text-2xl font-bold">&check;</div>
-        <div>
-          <h3 class="font-playfair text-2xl font-bold">Booking Inquiry Received!</h3>
-          <p class="font-cormorant text-[#8B7C6E] text-base mt-2">Thank you, <strong id="success-guest-name">John</strong>. Your request for the <strong id="success-room-name">Standard Room</strong> has been registered.</p>
-        </div>
-        <p class="text-xs text-gray-500 max-w-sm mx-auto">A reservation manager is reviewing your travel dates. We will reach out within 30 minutes with payment instructions and your direct check-in checklist.</p>
-        <button id="booking-success-reset" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2.5 rounded-full font-montserrat text-[10px] tracking-wider uppercase">Close Desk</button>
-      </div>
-    </div>
-  </div>
-
   <!-- AI Concierge Drawer -->
   <div id="concierge-backdrop" class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <div id="concierge-drawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col justify-between">
@@ -298,7 +234,6 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
-
     <div id="concierge-chat-logs" class="flex-1 p-6 overflow-y-auto space-y-4 bg-gray-50/50">
       <div class="flex justify-start">
         <div class="chat-bubble-assistant max-w-[85%] text-xs p-3.5 rounded-2xl shadow-sm">
@@ -311,13 +246,11 @@
         </div>
       </div>
     </div>
-
     <div class="p-4 border-t border-gray-100 bg-white flex flex-wrap gap-2">
       <button class="concierge-action-chip text-[9px] font-montserrat tracking-wider uppercase border border-gray-200 text-gray-500 hover:border-[#C6A76C] px-3 py-1.5 rounded-full" data-query-text="What are your room rates and types?">Room Rates</button>
       <button class="concierge-action-chip text-[9px] font-montserrat tracking-wider uppercase border border-gray-200 text-gray-500 hover:border-[#C6A76C] px-3 py-1.5 rounded-full" data-query-text="Tell me about Blyde River Canyon and local safari attractions">Limpopo Guide</button>
       <button class="concierge-action-chip text-[9px] font-montserrat tracking-wider uppercase border border-gray-200 text-gray-500 hover:border-[#C6A76C] px-3 py-1.5 rounded-full" data-query-text="What therapeutic wellness treatments are offered in the spa?">Spa Therapies</button>
     </div>
-
     <div class="p-4 border-t border-gray-100 bg-white flex items-center space-x-3">
       <input id="concierge-input" type="text" placeholder="Type your boutique enquiry..." class="flex-1 bg-[#FAF8F5] border border-gray-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-[#C6A76C]" />
       <button id="concierge-send" class="bg-[#2C2C2C] text-white px-4 py-3 rounded-xl hover:bg-[#C6A76C] transition-colors text-xs font-semibold">Send</button>
