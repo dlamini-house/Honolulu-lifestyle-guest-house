@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Hero Slideshow Controller – speed set to 2500ms (faster)
+  // Hero Slideshow Controller – speed set to 2500ms
   const slides = document.querySelectorAll('.hero-slideshow .slide');
   if (slides.length > 0) {
     let currentSlide = 0;
@@ -22,15 +22,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init all features
   initScrollHighlight();
   initMobileMenu();
-  initBookingModal();
   initGalleryLightbox();
   initContactForm();
   initAIConcierge();
 
-  // ========== NAVIGATION SCROLL HIGHLIGHT ==========
+  // ========== NAVIGATION SCROLL HIGHLIGHT (FIXED FOR MULTI-PAGE) ==========
   function initScrollHighlight() {
-    const sections = ['home', 'about', 'rooms', 'amenities', 'spa', 'location', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Clear all active classes first
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // For non-index pages, highlight based on the current page URL
+    if (currentPage !== 'index.html') {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+        }
+      });
+      return; // Stop here – no scroll tracking needed on sub-pages
+    }
+
+    // ===== FOR INDEX.HOME – handle scroll-based highlighting =====
+    const sections = ['home', 'about', 'rooms', 'amenities', 'spa', 'location', 'contact'];
+
+    // Set initial active state (Home)
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === '#home') {
+        link.classList.add('active');
+      }
+    });
 
     window.addEventListener('scroll', () => {
       let currentActive = 'home';
@@ -64,71 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function openDrawer() {
       drawer.classList.remove('translate-x-full');
       backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
     }
     function closeDrawer() {
       drawer.classList.add('translate-x-full');
       backdrop.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
     }
 
     if (menuBtn) menuBtn.addEventListener('click', openDrawer);
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     if (backdrop) backdrop.addEventListener('click', closeDrawer);
     links.forEach(link => link.addEventListener('click', closeDrawer));
-  }
-
-  // ========== BOOKING MODAL ==========
-  function initBookingModal() {
-    const modal = document.getElementById('booking-modal');
-    const closeBtn = document.getElementById('booking-modal-close');
-    const roomSelect = document.getElementById('booking-room-select');
-    const form = document.getElementById('booking-form');
-    const formScreen = document.getElementById('booking-form-screen');
-    const successScreen = document.getElementById('booking-success-screen');
-    const successGuestName = document.getElementById('success-guest-name');
-    const successRoomName = document.getElementById('success-room-name');
-    const successResetBtn = document.getElementById('booking-success-reset');
-
-    function openModal(roomId) {
-      if (modal) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = 'hidden';
-        if (roomId && roomSelect) {
-          roomSelect.value = roomId;
-        }
-      }
-    }
-
-    function closeModal() {
-      if (modal) {
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          formScreen.classList.remove('hidden');
-          successScreen.classList.add('hidden');
-          if (form) form.reset();
-        }, 300);
-      }
-    }
-
-    // Expose globally
-    window.triggerBooking = openModal;
-
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const guestName = document.getElementById('booking-name')?.value || 'Guest';
-        const roomVal = roomSelect?.value || 'standard';
-        const roomNames = { standard: 'Standard Room', deluxe: 'Deluxe Room', executive: 'Executive Room', twin: 'Twin Room', family: 'Family Room' };
-        if (successGuestName) successGuestName.textContent = guestName;
-        if (successRoomName) successRoomName.textContent = roomNames[roomVal] || 'Room';
-        formScreen.classList.add('hidden');
-        successScreen.classList.remove('hidden');
-      });
-    }
-    if (successResetBtn) successResetBtn.addEventListener('click', closeModal);
   }
 
   // ========== GALLERY LIGHTBOX ==========
@@ -186,10 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
       updateLightbox();
       if (lightbox) {
         lightbox.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
       }
     }
     function closeLightbox() {
-      if (lightbox) lightbox.classList.add('opacity-0', 'pointer-events-none');
+      if (lightbox) {
+        lightbox.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
     }
     function updateLightbox() {
       const item = GALLERY_ITEMS[activeIndex];
@@ -275,11 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backdrop) backdrop.classList.remove('opacity-0', 'pointer-events-none');
         if (input) setTimeout(() => input.focus(), 400);
         if (initialMsg) handleUserMessage(initialMsg);
+        document.body.style.overflow = 'hidden';
       }
     }
     function closeConcierge() {
       if (drawer) drawer.classList.add('translate-x-full');
       if (backdrop) backdrop.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
     }
 
     window.triggerConcierge = openConcierge;
